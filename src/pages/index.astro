@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Coming Soon">
+  <div class="content">
+    <h1>The Forest Network</h1>
+    <p>Coming Soon</p>
+    <a href="mailto:trailhead@theforestnetwork.earth">trailhead@theforestnetwork.earth</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .content {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #f0f7e6;
+    text-shadow:
+      0 2px 20px rgba(0, 0, 0, 0.9),
+      0 0 60px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c8dca0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+    margin-bottom: 6.5rem;
+  }
+
+  a {
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+  }
+</style>

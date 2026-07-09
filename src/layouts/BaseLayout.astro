@@ -1,0 +1,91 @@
+---
+import cgLightUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2?url';
+import cgRegularUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2?url';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+// font-display: block (not swap) - text stays invisible for a brief instant
+// rather than rendering in a fallback font and visibly snapping to Cormorant
+// Garamond once it loads. Combined with preload below, the invisible window
+// is imperceptible for a self-hosted file this small.
+const fontFaceCSS = `
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(${cgLightUrl}) format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(${cgRegularUrl}) format('woff2');
+}
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · The Forest Network</title>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preload" href={cgLightUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={cgRegularUrl} as="font" type="font/woff2" crossorigin />
+    <style set:html={fontFaceCSS}></style>
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.65) 100%),
+          url('/forest.jpg') center center / cover no-repeat fixed;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        color: #c8d8b0;
+      }
+
+      a {
+        color: #a8c480;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(168, 196, 128, 0.4);
+        padding-bottom: 1px;
+      }
+
+      a:hover {
+        color: #c8dca0;
+        border-bottom-color: rgba(200, 220, 160, 0.7);
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
