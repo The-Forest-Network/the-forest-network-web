@@ -8,6 +8,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>Coming Soon</p>
     <a href="mailto:trailhead@theforestnetwork.earth">trailhead@theforestnetwork.earth</a>
   </div>
+  <footer>
+    <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a>
+  </footer>
 </BaseLayout>
 
 <style>
@@ -42,5 +45,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 300;
     letter-spacing: 0.15em;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 4.5rem;
+    z-index: 1;
+    text-align: center;
+  }
+
+  footer a {
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: #8fa876;
+    opacity: 0.75;
+    border-bottom: 1px solid rgba(143, 168, 118, 0.4);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+  }
+
+  footer a:hover {
+    opacity: 1;
+    color: #c8dca0;
   }
 </style>
