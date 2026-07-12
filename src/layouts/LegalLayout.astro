@@ -1,0 +1,203 @@
+---
+import cgLightUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2?url';
+import cgRegularUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2?url';
+import cgSemiBoldUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url';
+
+interface Props {
+  title: string;
+  effectiveDate: string;
+}
+
+const { title, effectiveDate } = Astro.props;
+
+const fontFaceCSS = `
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(${cgLightUrl}) format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(${cgRegularUrl}) format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(${cgSemiBoldUrl}) format('woff2');
+}
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · The Forest Network</title>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preload" href={cgLightUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={cgRegularUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={cgSemiBoldUrl} as="font" type="font/woff2" crossorigin />
+    <style set:html={fontFaceCSS}></style>
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.78) 100%),
+          url('/forest.jpg') center center / cover no-repeat fixed;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        color: #c8d8b0;
+      }
+
+      a {
+        color: #a8c480;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(168, 196, 128, 0.4);
+        padding-bottom: 1px;
+      }
+
+      a:hover {
+        color: #c8dca0;
+        border-bottom-color: rgba(200, 220, 160, 0.7);
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 4rem 1.5rem 6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="panel">
+        <a class="home-link" href="/">← The Forest Network</a>
+        <h1>{title}</h1>
+        <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {effectiveDate}</p>
+        <div class="doc">
+          <slot />
+        </div>
+        <p class="cross-link">
+          <a href="/terms">Terms of Service</a> &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  .panel {
+    width: 100%;
+    max-width: 42rem;
+    background: rgba(8, 12, 6, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(168, 196, 128, 0.18);
+    border-radius: 4px;
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .home-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    color: #9db888;
+    border-bottom: none;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+  }
+
+  .home-link:hover {
+    color: #c8dca0;
+    opacity: 1;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #f0f7e6;
+    margin-bottom: 0.75rem;
+  }
+
+  .dates {
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    color: #8fa876;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .doc :global(h2) {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #dce8c8;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .doc :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .doc :global(p) {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 1.1rem;
+  }
+
+  .doc :global(ul) {
+    margin: 0 0 1.1rem 1.4rem;
+  }
+
+  .doc :global(li) {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    padding-left: 0.3rem;
+  }
+
+  .doc :global(li)::marker {
+    color: #7fa05c;
+  }
+
+  .doc :global(strong) {
+    font-weight: 600;
+    color: #dce8c8;
+  }
+
+  .cross-link {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(168, 196, 128, 0.18);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+</style>

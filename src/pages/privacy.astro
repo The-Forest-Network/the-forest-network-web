@@ -1,0 +1,135 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+
+<LegalLayout title="Privacy Policy" effectiveDate="12 July 2026">
+  <h2>1. Who we are</h2>
+  <p>
+    The Forest Network (“we,” “us,” “our”) is a private, invite-only messaging community built on
+    the Matrix protocol. We run our own Synapse homeserver and a branded Element app for iOS and
+    Android. The service is operated by Evan Roth and Daniel McLean. For any privacy question, or
+    to access, correct or delete your information, contact Evan Roth at <a href="mailto:legal@theforestnetwork.earth">legal@theforestnetwork.earth</a>.
+  </p>
+
+  <h2>2. Our approach and legal position</h2>
+  <p>
+    We are a small, non-commercial community based in Australia. Because our annual turnover is
+    under A$3 million, and we are not a health service provider and do not trade in personal
+    information, we fall within the small-business exemption to the Privacy Act 1988 (Cth) and are
+    generally not bound by the Australian Privacy Principles. We publish this policy voluntarily —
+    for transparency with our members and to meet Apple App Store and Google Play requirements. We
+    honour the core rights of access, correction and deletion as a courtesy. We are not currently
+    subject to the EU GDPR or the California CCPA.
+  </p>
+
+  <h2>3. Where your data is stored</h2>
+  <p>
+    All service data is stored on our own server located in Australia. Federation is disabled,
+    which means your data is not replicated to, or shared with, any other Matrix server. The only
+    routine flow of data outside our server is push notifications (see section 6).
+  </p>
+
+  <h2>4. What we collect and what we can see</h2>
+  <p>To run the service, our server stores, and our administrators can technically access:</p>
+  <ul>
+    <li>
+      Account data — your username / Matrix ID, display name, avatar, password hash, account
+      creation date, and any email address you provide for recovery.
+    </li>
+    <li>Device and session data — device IDs and names, access (session) tokens, and push notification keys.</li>
+    <li>Network data — IP addresses and client/browser information, recorded in server logs and the database.</li>
+    <li>
+      Room and message information — the rooms you are in, room memberships, names and topics,
+      message timestamps, reactions, read receipts, and the content of any messages and files you
+      submit.
+    </li>
+  </ul>
+  <p>
+    <strong>Message visibility.</strong> All message content and file attachments are stored on
+    our server in a form our administrators can technically read. We do not use end-to-end
+    encryption. This is a deliberate design choice that enables new members to view the full
+    history of a channel when they join. We limit administrator access to what is necessary to
+    operate the service, investigate reports, and enforce our Terms of Service.
+  </p>
+  <p>
+    <strong>Channel history.</strong> Channel history is intentionally preserved and accessible.
+    When you join a room, or sign in on a new device, you can read the full history of that
+    channel. This is a core feature of the service, designed so that new members can participate
+    in ongoing conversations with full context.
+  </p>
+  <p>
+    We do not use third-party analytics, we do not profile you, we do not show advertising, and we
+    do not sell or rent your data to anyone.
+  </p>
+
+  <h2>5. Why we collect it</h2>
+  <p>
+    We collect this information solely to operate the service: to sign you in, deliver and store
+    your messages, send notifications, keep the service secure, prevent abuse, and fix problems.
+  </p>
+
+  <h2>6. Push notifications</h2>
+  <p>
+    If you turn on push notifications, your device obtains a push token from Apple's Push
+    Notification service (APNs) or Google's Firebase Cloud Messaging (FCM). Our server sends
+    notification triggers through a push gateway to APNs or FCM so your device can alert you. We
+    configure push to carry minimal information — typically the event and room identifiers rather
+    than message content. Apple and Google process this data under their own privacy policies.
+    This is the only routine situation in which limited data leaves our Australian server, and it
+    is sent to providers located outside Australia.
+  </p>
+
+  <h2>7. How long we keep it</h2>
+  <p>
+    We keep your account information for as long as your account exists. Messages you send remain
+    part of the room's history and are not automatically deleted when you delete your account,
+    consistent with the channel-history design described in section 4 — you can delete individual
+    messages yourself, or ask us to remove specific content. Technical logs, including IP and
+    last-seen records, are kept only as long as needed to operate and secure the service and are
+    then deleted on a rolling basis.
+  </p>
+  <p>
+    Deleting your account removes your devices, access tokens, push records and password hash, and
+    removes you from rooms and the user directory. It does not delete messages you have already
+    sent — these remain visible in room history to other members, as described above. Because
+    federation is disabled, there are no copies on other servers — deletion of your account data on
+    our server is complete.
+  </p>
+
+  <h2>8. Security</h2>
+  <p>
+    We take reasonable technical and organisational steps to protect your information, including
+    encrypted transport (TLS), access controls on the server, and limiting administrator access to
+    what is needed to run the service. No system is perfectly secure. If a breach occurs that is
+    likely to cause you serious harm, we will notify affected members and provide guidance, even
+    though we are not legally required to do so.
+  </p>
+
+  <h2>9. Your choices and rights</h2>
+  <p>You can:</p>
+  <ul>
+    <li>Access and update much of your information directly in the app — display name, avatar, devices and sessions;</li>
+    <li>Request a copy of your data, or ask us to correct it;</li>
+    <li>Delete your account from within the app at any time, which removes your data as described in section 7.</li>
+  </ul>
+  <p>
+    To make any request or complaint, contact Evan Roth at <a href="mailto:legal@theforestnetwork.earth">legal@theforestnetwork.earth</a>. If you are not
+    satisfied with our response, you may contact the Office of the Australian Information
+    Commissioner at <a href="https://oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>.
+  </p>
+
+  <h2>10. Children</h2>
+  <p>
+    The service is invite-only and intended for adults. We do not knowingly collect information
+    from children under 18.
+  </p>
+
+  <h2>11. Changes</h2>
+  <p>
+    We may update this policy. The current version is always available at this address, with the
+    “last updated” date shown above.
+  </p>
+
+  <h2>12. Contact</h2>
+  <p>Evan Roth — <a href="mailto:legal@theforestnetwork.earth">legal@theforestnetwork.earth</a></p>
+</LegalLayout>
