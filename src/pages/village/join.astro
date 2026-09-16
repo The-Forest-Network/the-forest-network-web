@@ -12,6 +12,7 @@ import ScrollLayout from '../../layouts/ScrollLayout.astro';
 ---
 
 <ScrollLayout title="Join the Village">
+  <div class="page-bg"></div>
   <a href="/" class="wordmark">The Forest Network</a>
 
   <section id="poem" class="screen screen--poem">
@@ -129,14 +130,21 @@ import ScrollLayout from '../../layouts/ScrollLayout.astro';
     opacity: 1;
   }
 
+  .page-bg {
+    position: fixed;
+    inset: 0;
+    background: url('/forest.jpg') center center / cover no-repeat;
+  }
+
   .screen {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
+    min-height: var(--app-vh, 100svh);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 1.5rem;
-    background: url('/forest.jpg') center center / cover no-repeat fixed;
     scroll-margin-top: 0;
   }
 
@@ -263,8 +271,7 @@ import ScrollLayout from '../../layouts/ScrollLayout.astro';
 
   @media (max-width: 640px) {
     .screen {
-      padding: 5rem 1.25rem;
-      background-attachment: scroll;
+      padding: 3.5rem 1.25rem;
     }
     .wordmark {
       top: 1.25rem;
@@ -273,3 +280,17 @@ import ScrollLayout from '../../layouts/ScrollLayout.astro';
     }
   }
 </style>
+
+<script>
+  // CSS *vh/dvh/svh units were unreliable in testing on real mobile Safari —
+  // sections rendered taller than the actually-visible area, leaving gaps
+  // before the down-arrow / next section's content. window.innerHeight has
+  // always correctly reflected the current visible viewport (toolbar state
+  // included), so measure it directly instead.
+  function setViewportHeight() {
+    document.documentElement.style.setProperty('--app-vh', `${window.innerHeight}px`);
+  }
+  setViewportHeight();
+  window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', setViewportHeight);
+</script>
