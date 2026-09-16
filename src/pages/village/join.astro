@@ -1,0 +1,274 @@
+---
+import ScrollLayout from '../../layouts/ScrollLayout.astro';
+
+// Copy is verbatim from github.com/The-Forest-Network/the-forest-network-web/issues/6
+// (comment 5650893669, compiled by wandatree from the original trial-village
+// invite + subsequent discussion). Do not edit the wording here without
+// updating that issue.
+//
+// Background images are PLACEHOLDERS (site's existing forest.jpg, reused
+// across all three sections with different overlay treatments) pending real
+// photography for each section — see issue #6.
+---
+
+<ScrollLayout title="Join the Village">
+  <a href="/" class="wordmark">The Forest Network</a>
+
+  <section id="poem" class="screen screen--poem">
+    <div class="overlay"></div>
+    <div class="content">
+      <p class="poem">
+        we need but a place<br />
+        to come back to<br />
+        every so often;<br />
+        a small home for us<br />
+        to come together;<br />
+        the relief of breathing<br />
+        as one, for a while,<br />
+        holding and being held;<br />
+        humming, too, as one<br />
+        until we remember<br />
+        who we are, or could be.<br />
+        so that we can fly off<br />
+        again, out into the world<br />
+        where things are now<br />
+        so achingly, unnervingly,<br />
+        coming apart.
+      </p>
+      <p class="attribution">Moon Song, &ldquo;the starling box&rdquo;</p>
+    </div>
+    <a href="#calling" class="scroll-cue" aria-label="Continue to the next section">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </a>
+  </section>
+
+  <section id="calling" class="screen screen--calling">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>
+        The Earth has been calling her human children to remember how to be relation to all
+        things; to be in deep relation to ourselves and other human beings and the
+        more-than-human beings we share this corner of the galaxy with.
+      </p>
+      <p>
+        The Forest Network is a place where you can connect across the galaxies. It is place
+        in which you can seek solace; a place where you can deepen into the Mystery&hellip;
+        with others. Where you can dream and explore all that is and all that can be.
+      </p>
+      <p>
+        This Village will be unintentional, it will be uncertain, allowing new forms of being
+        to arise; it is a place where villagers are open to the eddies of mystery; where we
+        can allow the Village itself to be a participating being in the creation of the
+        village tapestry within the global tapestry.
+      </p>
+    </div>
+    <a href="#invitation" class="scroll-cue" aria-label="Continue to the next section">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </a>
+  </section>
+
+  <section id="invitation" class="screen screen--invitation">
+    <div class="overlay"></div>
+    <div class="content content--wide">
+      <p>
+        If this invitation calls to your heart, please share with us what&rsquo;s drawing you
+        through the fungal hyphae and into The Forest Network, and a little about yourself and
+        your journey to date so that we can get to know you better. Here&rsquo;s a few ideas:
+      </p>
+      <ul>
+        <li>Poetry that expresses something deep inside</li>
+        <li>Experiences you&rsquo;ve had in nature</li>
+        <li>Dreams</li>
+        <li>Art</li>
+        <li>Imagery</li>
+        <li>Recorded video/audio</li>
+        <li>Collages</li>
+        <li>Photographs</li>
+        <li>Your deepest desires and fears</li>
+        <li>Work you&rsquo;ve done in nature (rituals, remembrances, awakenings, healing, etc.)</li>
+      </ul>
+      <p>
+        Also include a paragraph expressing what you hope to find in the clearing created by
+        The Forest Network Village.
+      </p>
+      <p>
+        Please be concise, you are making your first introduction to the Village. We suggest
+        what fits into 5 minutes of reading/listening/looking &mdash; eg 2 pages of written
+        text, 5 minutes of audio, 2 images&hellip; Once you are part of the Village you will
+        have ample opportunity to share as much as you wish.
+      </p>
+      <p>All submissions will be held close to our hearts and in strict confidence!</p>
+      <p>If you have any questions, please don&rsquo;t hesitate to write.</p>
+      <a
+        class="write-link"
+        href="mailto:trailhead@theforestnetwork.earth?subject=Join%20the%20Village"
+        >Write to trailhead@theforestnetwork.earth</a
+      >
+    </div>
+  </section>
+</ScrollLayout>
+
+<style>
+  .wordmark {
+    position: fixed;
+    top: 1.75rem;
+    left: 1.75rem;
+    z-index: 10;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8dca0;
+    text-decoration: none;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+  .wordmark:hover {
+    opacity: 1;
+  }
+
+  .screen {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    background: url('/forest.jpg') center center / cover no-repeat fixed;
+    scroll-margin-top: 0;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  .screen--poem .overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0.67) 100%);
+  }
+  .screen--calling .overlay {
+    background: linear-gradient(180deg, rgba(6, 14, 4, 0.79) 0%, rgba(6, 14, 4, 0.57) 50%, rgba(6, 14, 4, 0.82) 100%);
+  }
+  .screen--invitation .overlay {
+    background: linear-gradient(180deg, rgba(4, 9, 3, 0.89) 0%, rgba(4, 9, 3, 0.75) 50%, rgba(4, 9, 3, 0.92) 100%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 42rem;
+    text-align: center;
+  }
+
+  .content--wide {
+    max-width: 38rem;
+    text-align: left;
+  }
+
+  .poem {
+    font-size: clamp(1rem, 2.1vw, 1.4rem);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #f0f7e6;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    font-style: italic;
+  }
+
+  .attribution {
+    margin-top: 1rem;
+    font-size: clamp(1rem, 2.1vw, 1.4rem);
+    letter-spacing: 0.08em;
+    color: #f0f7e6;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .screen--calling .content p {
+    font-size: clamp(1rem, 1.9vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.55;
+    color: #e6efd8;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.1rem;
+  }
+  .screen--calling .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .screen--invitation .content p {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.7;
+    color: #dbe6c8;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.35rem;
+  }
+
+  .screen--invitation ul {
+    margin: 0 0 1.35rem 0;
+    padding-left: 1.4rem;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.85;
+    color: #dbe6c8;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+  }
+
+  .write-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #f0f7e6;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(168, 196, 128, 0.6);
+    padding-bottom: 2px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+  }
+  .write-link:hover {
+    color: #c8dca0;
+    border-bottom-color: rgba(200, 220, 160, 0.9);
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #c8dca0;
+    opacity: 0.85;
+    animation: nudge 2.4s ease-in-out infinite;
+  }
+  .scroll-cue:hover {
+    opacity: 1;
+  }
+
+  @keyframes nudge {
+    0%,
+    100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 8px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-cue {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .screen {
+      padding: 5rem 1.25rem;
+      background-attachment: scroll;
+    }
+    .wordmark {
+      top: 1.25rem;
+      left: 1.25rem;
+      font-size: 0.7rem;
+    }
+  }
+</style>
