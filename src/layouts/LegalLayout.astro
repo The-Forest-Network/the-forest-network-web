@@ -5,7 +5,7 @@ import cgSemiBoldUrl from '@fontsource/cormorant-garamond/files/cormorant-garamo
 
 interface Props {
   title: string;
-  effectiveDate: string;
+  effectiveDate?: string;
   lastUpdated?: string;
 }
 
@@ -94,12 +94,16 @@ const fontFaceCSS = `
       <div class="panel">
         <a class="home-link" href="/">← The Forest Network</a>
         <h1>{title}</h1>
-        <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {lastUpdated}</p>
+        {effectiveDate ? (
+          <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {lastUpdated}</p>
+        ) : lastUpdated && (
+          <p class="dates">Last updated: {lastUpdated}</p>
+        )}
         <div class="doc">
           <slot />
         </div>
         <p class="cross-link">
-          <a href="/acceptable-use">Terms of Service</a> &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/copyright">Copyright</a>
+          <a href="/village/terms">Terms of Service</a> &nbsp;·&nbsp; <a href="/village/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/village/copyright">Copyright</a> &nbsp;·&nbsp; <a href="/village/support">Support</a>
         </p>
       </div>
     </main>
