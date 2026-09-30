@@ -2,7 +2,7 @@
 import LegalLayout from '../layouts/LegalLayout.astro';
 ---
 
-<LegalLayout title="Privacy Policy" effectiveDate="12 July 2026">
+<LegalLayout title="Privacy Policy" effectiveDate="12 July 2026" lastUpdated="30 September 2026">
   <h2>1. Who we are</h2>
   <p>
     The Forest Network (“we,” “us,” “our”) is a private, invite-only messaging community built on
@@ -26,7 +26,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   <p>
     All service data is stored on our own server located in Australia. Federation is disabled,
     which means your data is not replicated to, or shared with, any other Matrix server. The only
-    routine flow of data outside our server is push notifications (see section 6).
+    routine flows of data outside our server are push notifications and email (see section 6).
   </p>
 
   <h2>4. What we collect and what we can see</h2>
@@ -40,22 +40,45 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     <li>Network data — IP addresses and client/browser information, recorded in server logs and the database.</li>
     <li>
       Room and message information — the rooms you are in, room memberships, names and topics,
-      message timestamps, reactions, read receipts, and the content of any messages and files you
-      submit.
+      message timestamps, reactions, read receipts, and the messages and files you submit. The
+      content of end-to-end encrypted messages is stored only in encrypted form (see below).
     </li>
   </ul>
   <p>
-    <strong>Message visibility.</strong> All message content and file attachments are stored on
-    our server in a form our administrators can technically read. We do not use end-to-end
-    encryption. This is a deliberate design choice that enables new members to view the full
-    history of a channel when they join. We limit administrator access to what is necessary to
-    operate the service, investigate reports, and enforce our Terms of Service.
+    <strong>Encryption.</strong> Direct messages and private (invite-only) channels are end-to-end
+    encrypted. Their content can only be read on the devices of the people in the conversation;
+    our administrators cannot read it. Public channels are deliberately not end-to-end encrypted,
+    so that their history stays available to everyone (see below). Public channel content and
+    file attachments are stored on our server in a form our administrators can technically read.
+    We limit administrator access to what is necessary to operate the service, investigate
+    reports, and enforce our Terms of Service.
   </p>
   <p>
-    <strong>Channel history.</strong> Channel history is intentionally preserved and accessible.
-    When you join a room, or sign in on a new device, you can read the full history of that
-    channel. This is a core feature of the service, designed so that new members can participate
-    in ongoing conversations with full context.
+    <strong>Channel history.</strong> Public channel history is intentionally preserved and
+    accessible. When you join a public channel, or sign in on a new device, you can read the full
+    history of that channel. This is a core feature of the service, designed so that new members
+    can participate in ongoing conversations with full context.
+  </p>
+  <p>
+    <strong>Keeping your encrypted history.</strong> To read your direct messages and private
+    channels on a new device, set up recovery in the app. If you lose access to all of your devices
+    without recovery set up, your encrypted messages cannot be restored, including by us. People
+    who join a private channel may not be able to read messages sent before they joined.
+  </p>
+  <p>
+    <strong>Reports.</strong> When you report a message or room, we receive the report, your reason
+    and details of the room and sender. If the reported message is end-to-end encrypted, our
+    administrators cannot read it, so please describe the problem in your reason. Reports are
+    forwarded to our moderators by email (see section 6).
+  </p>
+  <p>
+    <strong>Bug reports.</strong> If you choose to send a bug report using “Report a problem” in
+    the app, we receive your description, your Matrix ID and device ID, your app and
+    operating-system versions, your language settings, a screenshot if you attach one, and the
+    app’s diagnostic logs unless you turn them off. Logs describe how the app is working and can
+    include room and user identifiers, but they are designed not to include message content. Bug
+    reports are stored on our server, can only be accessed by our administrators, and are used
+    only to fix problems.
   </p>
   <p>
     We do not use third-party analytics, we do not profile you, we do not show advertising, and we
@@ -65,18 +88,28 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   <h2>5. Why we collect it</h2>
   <p>
     We collect this information solely to operate the service: to sign you in, deliver and store
-    your messages, send notifications, keep the service secure, prevent abuse, and fix problems.
+    your messages, send notifications and emails, keep the service secure, prevent abuse, and fix
+    problems.
   </p>
 
-  <h2>6. Push notifications</h2>
+  <h2>6. Push notifications and email</h2>
   <p>
     If you turn on push notifications, your device obtains a push token from Apple's Push
     Notification service (APNs) or Google's Firebase Cloud Messaging (FCM). Our server sends
     notification triggers through a push gateway to APNs or FCM so your device can alert you. We
     configure push to carry minimal information — typically the event and room identifiers rather
     than message content. Apple and Google process this data under their own privacy policies.
-    This is the only routine situation in which limited data leaves our Australian server, and it
-    is sent to providers located outside Australia.
+  </p>
+  <p>
+    We send email through our email provider, Migadu. This includes invitation and account emails
+    (such as password resets), and notifications to our administrators and moderators about bug
+    reports and abuse reports. These notifications can include the description or reason you gave,
+    your Matrix ID, and details of the room and people involved. Migadu processes this data under
+    its own privacy policy.
+  </p>
+  <p>
+    Push notifications and email are the only routine situations in which limited data leaves our
+    Australian server, and they are sent to providers located outside Australia.
   </p>
 
   <h2>7. How long we keep it</h2>
@@ -86,7 +119,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     consistent with the channel-history design described in section 4 — you can delete individual
     messages yourself, or ask us to remove specific content. Technical logs, including IP and
     last-seen records, are kept only as long as needed to operate and secure the service and are
-    then deleted on a rolling basis.
+    then deleted on a rolling basis. Stored bug reports are deleted after 90 days.
   </p>
   <p>
     Deleting your account removes your devices, access tokens, push records and password hash, and
@@ -99,8 +132,9 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   <h2>8. Security</h2>
   <p>
     We take reasonable technical and organisational steps to protect your information, including
-    encrypted transport (TLS), access controls on the server, and limiting administrator access to
-    what is needed to run the service. No system is perfectly secure. If a breach occurs that is
+    encrypted transport (TLS), end-to-end encryption for direct messages and private channels,
+    access controls on the server, and limiting administrator access to what is needed to run the
+    service. No system is perfectly secure. If a breach occurs that is
     likely to cause you serious harm, we will notify affected members and provide guidance, even
     though we are not legally required to do so.
   </p>

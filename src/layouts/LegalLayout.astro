@@ -6,9 +6,10 @@ import cgSemiBoldUrl from '@fontsource/cormorant-garamond/files/cormorant-garamo
 interface Props {
   title: string;
   effectiveDate: string;
+  lastUpdated?: string;
 }
 
-const { title, effectiveDate } = Astro.props;
+const { title, effectiveDate, lastUpdated = effectiveDate } = Astro.props;
 
 const fontFaceCSS = `
 @font-face {
@@ -93,7 +94,7 @@ const fontFaceCSS = `
       <div class="panel">
         <a class="home-link" href="/">← The Forest Network</a>
         <h1>{title}</h1>
-        <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {effectiveDate}</p>
+        <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {lastUpdated}</p>
         <div class="doc">
           <slot />
         </div>

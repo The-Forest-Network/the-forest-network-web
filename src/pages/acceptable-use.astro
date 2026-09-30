@@ -2,7 +2,7 @@
 import LegalLayout from '../layouts/LegalLayout.astro';
 ---
 
-<LegalLayout title="Terms of Service & Acceptable Use Policy" effectiveDate="12 July 2026">
+<LegalLayout title="Terms of Service & Acceptable Use Policy" effectiveDate="12 July 2026" lastUpdated="30 September 2026">
   <h2>1. Agreement</h2>
   <p>
     These Terms form a binding agreement between you and The Forest Network, operated by Evan
@@ -39,15 +39,16 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   <h2>5. Reporting, blocking and moderation</h2>
   <p>Within the app you can:</p>
   <ul>
-    <li>Report any message or user to administrators;</li>
+    <li>Report any message or room to administrators;</li>
     <li>Block any user, so you no longer receive their messages or invitations;</li>
     <li>Leave any room at any time.</li>
   </ul>
   <p>
     Administrators review reports and respond in a timely manner. We may remove content, suspend
-    or terminate accounts, and ban users who breach these Terms. Because message content is not
-    end-to-end encrypted, administrators can read channel content when investigating a report or
-    enforcing these Terms.
+    or terminate accounts, and ban users who breach these Terms. Public channels are not end-to-end
+    encrypted, so administrators can read their content when investigating a report or enforcing
+    these Terms. Direct messages and private channels are end-to-end encrypted, so administrators
+    cannot read them; if you report a message there, describe the problem in your report.
   </p>
 
   <h2>6. Your content</h2>
@@ -60,7 +61,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
   <h2>7. Privacy and administrator visibility</h2>
   <p>
     You acknowledge our <a href="/privacy">Privacy Policy</a>, including that administrators can
-    technically see all metadata and message content stored on the service, as described in that
+    technically see metadata stored on the service and the content of public channels, but not the
+    content of end-to-end encrypted direct messages and private channels, as described in that
     policy.
   </p>
 
