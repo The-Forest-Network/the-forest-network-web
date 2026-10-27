@@ -1,7 +1,6 @@
 ---
-// Alternate redesign layout: same forest backdrop as the
-// original, set in Figtree, with the app logo as the masthead and content set on a
-// translucent panel so body text stays legible over the photograph.
+// Shared site layout: forest backdrop, Figtree, the app logo as the masthead, and
+// content set on a translucent panel so text stays legible over the photograph.
 import figtreeRegularUrl from '@fontsource/figtree/files/figtree-latin-400-normal.woff2?url';
 import figtreeSemiUrl from '@fontsource/figtree/files/figtree-latin-600-normal.woff2?url';
 
@@ -35,7 +34,6 @@ const fontFaceCSS = `
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
     <title>{title} · The Forest Network</title>
     <link rel="icon" href="/favicon.svg" />
     <link rel="preload" href={figtreeRegularUrl} as="font" type="font/woff2" crossorigin />
@@ -79,7 +77,7 @@ const fontFaceCSS = `
         border-radius: 2px;
       }
 
-      .alt-shell {
+      .site-shell {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -87,7 +85,7 @@ const fontFaceCSS = `
         padding: 3rem 1.25rem 2rem;
       }
 
-      .alt-brand {
+      .site-brand {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -97,24 +95,24 @@ const fontFaceCSS = `
         margin-bottom: 2.5rem;
       }
 
-      .alt-brand img {
+      .site-brand img {
         border-radius: 22%;
         box-shadow: 0 6px 32px rgba(0, 0, 0, 0.6);
         width: 4.5rem;
         height: auto;
       }
 
-      .alt-brand--large img {
+      .site-brand--large img {
         width: clamp(8rem, 22vw, 11rem);
       }
 
-      .alt-brand span {
+      .site-brand span {
         font-size: 1.15rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
       }
 
-      .alt-panel {
+      .site-panel {
         width: 100%;
         max-width: 40rem;
         padding: clamp(1.5rem, 5vw, 3rem);
@@ -126,7 +124,7 @@ const fontFaceCSS = `
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
       }
 
-      .alt-footer {
+      .site-footer {
         margin-top: auto;
         padding-top: 2.5rem;
         font-size: 1rem;
@@ -137,13 +135,13 @@ const fontFaceCSS = `
     </style>
   </head>
   <body>
-    <div class="alt-shell">
-      <a href="/alt/" class={`alt-brand ${logoSize === 'large' ? 'alt-brand--large' : ''}`}>
+    <div class="site-shell">
+      <a href="/" class={`site-brand ${logoSize === 'large' ? 'site-brand--large' : ''}`}>
         <img src="/mobile-icon.png" alt="" width="512" height="511" />
         <span>The Forest Network</span>
       </a>
       <slot />
-      <footer class="alt-footer">
+      <footer class="site-footer">
         <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/acceptable-use">Terms</a> &nbsp;·&nbsp; <a href="/copyright">Copyright</a>
       </footer>
     </div>
