@@ -1,7 +1,7 @@
 ---
-import cgLightUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2?url';
-import cgRegularUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2?url';
-import cgSemiBoldUrl from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url';
+import figtreeLightUrl from '@fontsource/figtree/files/figtree-latin-300-normal.woff2?url';
+import figtreeRegularUrl from '@fontsource/figtree/files/figtree-latin-400-normal.woff2?url';
+import figtreeSemiBoldUrl from '@fontsource/figtree/files/figtree-latin-600-normal.woff2?url';
 
 interface Props {
   title: string;
@@ -12,25 +12,25 @@ const { title, effectiveDate } = Astro.props;
 
 const fontFaceCSS = `
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: 'Figtree';
   font-style: normal;
   font-weight: 300;
   font-display: block;
-  src: url(${cgLightUrl}) format('woff2');
+  src: url(${figtreeLightUrl}) format('woff2');
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: 'Figtree';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(${cgRegularUrl}) format('woff2');
+  src: url(${figtreeRegularUrl}) format('woff2');
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: 'Figtree';
   font-style: normal;
   font-weight: 600;
   font-display: block;
-  src: url(${cgSemiBoldUrl}) format('woff2');
+  src: url(${figtreeSemiBoldUrl}) format('woff2');
 }
 `;
 ---
@@ -42,9 +42,9 @@ const fontFaceCSS = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} · The Forest Network</title>
     <link rel="icon" href="/favicon.svg" />
-    <link rel="preload" href={cgLightUrl} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={cgRegularUrl} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={cgSemiBoldUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={figtreeLightUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={figtreeRegularUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={figtreeSemiBoldUrl} as="font" type="font/woff2" crossorigin />
     <style set:html={fontFaceCSS}></style>
     <style is:global>
       * {
@@ -62,7 +62,7 @@ const fontFaceCSS = `
         background:
           linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.78) 100%),
           url('/forest.jpg') center center / cover no-repeat fixed;
-        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-family: 'Figtree', ui-rounded, system-ui, sans-serif;
         color: #c8d8b0;
       }
 

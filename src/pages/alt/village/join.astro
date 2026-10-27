@@ -1,0 +1,162 @@
+---
+import AltLayout from '../../../layouts/AltLayout.astro';
+
+// Copy is verbatim from the original /village/join page (see issue #6);
+// only line-break markup is dropped so text reflows naturally.
+---
+
+<AltLayout title="Join the Village">
+  <article class="alt-panel prose">
+
+  <section id="poem">
+    <div>
+      <p class="poem">
+        we need but a place<br />
+        to come back to<br />
+        every so often;<br />
+        a small home for us<br />
+        to come together;<br />
+        the relief of breathing<br />
+        as one, for a while,<br />
+        holding and being held;<br />
+        humming, too, as one<br />
+        until we remember<br />
+        who we are, or could be.<br />
+        so that we can fly off<br />
+        again, out into the world<br />
+        where things are now<br />
+        so achingly, unnervingly,<br />
+        coming apart.
+      </p>
+      <p class="attribution">Moon Song, &ldquo;the starling box&rdquo;</p>
+    </div>
+  </section>
+
+  <section id="calling">
+    <div>
+      <p>
+        The Earth has been calling her
+        human children to remember how
+        to be in relation
+        to all things;
+        to be in deep relation to
+        ourselves and other human beings
+        and the more-than-human beings
+        we share this corner of the
+        galaxy with.
+      </p>
+      <p>
+        The Forest Network is a place
+        where you can connect across
+        the galaxies.
+        It is a place in
+        which you can seek solace;
+        a
+        place where you can deepen into
+        the Mystery&hellip; with others.
+        Where you can dream and explore
+        all that is and all that can be.
+      </p>
+      <p>
+        This Village will be
+        unintentional, it will be
+        uncertain, allowing new forms
+        of being to arise; it is a place
+        where villagers are open to
+        the eddies of mystery;
+        where we
+        can allow the Village itself to
+        be a participating being
+        in the
+        creation of the village tapestry
+        within the global tapestry.
+      </p>
+    </div>
+  </section>
+
+  <section id="invitation">
+    <div>
+      <p>
+        If this invitation calls to your heart, please share with us what&rsquo;s drawing you
+        through the fungal hyphae and into The Forest Network, and a little about yourself and
+        your journey to date so that we can get to know you better. Here&rsquo;s a few ideas:
+      </p>
+      <ul>
+        <li>Poetry that expresses something deep inside</li>
+        <li>Experiences you&rsquo;ve had in nature</li>
+        <li>Dreams</li>
+        <li>Art</li>
+        <li>Imagery</li>
+        <li>Recorded video/audio</li>
+        <li>Collages</li>
+        <li>Photographs</li>
+        <li>Your deepest desires and fears</li>
+        <li>Work you&rsquo;ve done in nature (rituals, remembrances, awakenings, healing, etc.)</li>
+      </ul>
+      <p>
+        Also include a paragraph expressing what you hope to find in the clearing created by
+        The Forest Network Village.
+      </p>
+      <p>
+        Please be concise, you are making your first introduction to the Village. We suggest
+        what fits into 5 minutes of reading/listening/looking &mdash; eg 2 pages of written
+        text, 5 minutes of audio, 2 images&hellip; Once you are part of the Village you will
+        have ample opportunity to share as much as you wish.
+      </p>
+      <p>All submissions will be held close to our hearts and in strict confidence!</p>
+      <p>If you have any questions, please don&rsquo;t hesitate to write.</p>
+      <a
+        class="write-link"
+        href="mailto:trailhead@theforestnetwork.earth?subject=Join%20the%20Village"
+        >Write to trailhead@theforestnetwork.earth</a
+      >
+    </div>
+  </section>
+  </article>
+</AltLayout>
+
+<style>
+  .prose section + section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(212, 232, 172, 0.2);
+  }
+
+  .prose p,
+  .prose li {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose ul {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.3rem;
+  }
+
+  .poem {
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  }
+
+  .attribution {
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #d4e8ac;
+  }
+
+  .write-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-weight: 400;
+  }
+</style>
