@@ -10,7 +10,7 @@ const { title, effectiveDate } = Astro.props;
 ---
 
 <SiteLayout title={title}>
-  <article class="site-panel legal">
+  <article class="site-panel">
     <h1>{title}</h1>
     <p class="dates">Effective date: {effectiveDate}&nbsp;&nbsp;&nbsp;Last updated: {effectiveDate}</p>
     <div class="doc">
@@ -20,10 +20,6 @@ const { title, effectiveDate } = Astro.props;
 </SiteLayout>
 
 <style>
-  .legal {
-    max-width: 44rem;
-  }
-
   h1 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 600;
