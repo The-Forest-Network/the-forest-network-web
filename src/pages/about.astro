@@ -1,0 +1,71 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+// DRAFT copy. Every statement here is drawn from wording already on the site
+// (/village/join, /village/privacy, /village/support). Review and expand
+// before launch.
+const TRAILHEAD_EMAIL = 'trailhead@theforestnetwork.earth';
+---
+
+<SiteLayout title="About">
+  <article class="site-panel prose">
+    <h1>About The Forest Network</h1>
+
+    <p>
+      The Earth has been calling her human children to remember how to be in relation to all
+      things; to be in deep relation to ourselves and other human beings and the more-than-human
+      beings we share this corner of the galaxy with.
+    </p>
+    <p>
+      The Forest Network is a place where you can connect across the galaxies. It is a place in
+      which you can seek solace; a place where you can deepen into the Mystery&hellip; with
+      others. Where you can dream and explore all that is and all that can be.
+    </p>
+
+    <h2>The Village</h2>
+    <p>
+      The Village is our private, invite-only messaging community. It is small and
+      non-commercial, based in Australia, and run by Evan Roth and Daniel McLean. The Village is
+      open to the eddies of mystery, and we allow it to be a participating being in the creation
+      of the village tapestry within the global tapestry.
+    </p>
+
+    <h2>Built to be private</h2>
+    <p>
+      The Village runs on the Matrix protocol, on our own server in Australia, with federation
+      turned off so your data is not shared with any other server. Direct messages and private
+      channels are end-to-end encrypted. You use the Village through the Forest Network app,
+      available for iOS and Android.
+    </p>
+
+    <h2>Join us</h2>
+    <p>
+      If this calls to your heart, <a href="/village/join">find the trailhead</a> and tell us a
+      little about yourself. Questions are always welcome: write to
+      <a href={`mailto:${TRAILHEAD_EMAIL}`}>{TRAILHEAD_EMAIL}</a>, or visit
+      <a href="/village/support">Support</a>.
+    </p>
+  </article>
+</SiteLayout>
+
+<style>
+  .prose h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.75rem;
+  }
+
+  .prose h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .prose p {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+</style>
