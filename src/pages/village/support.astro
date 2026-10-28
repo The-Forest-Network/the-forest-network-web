@@ -1,0 +1,89 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+
+// Support for the Village: our Matrix homeserver and the Forest Network app
+// (a branded Element X on iOS and Android). Menu names below match the app's
+// English labels; update them if the app's wording changes.
+const SUPPORT_EMAIL = 'steward@theforestnetwork.earth';
+---
+
+<LegalLayout title="Village Support" lastUpdated="30 September 2026">
+  <p>
+    Help with the Village, our private messaging community, and the Forest Network app for iOS and
+    Android. If you can't find what you need here, email us at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+  </p>
+
+  <h2>Joining the Village</h2>
+  <p>
+    The Village is invite-only. If you'd like to join, <a href="/village/join">find the trailhead</a> and
+    tell us a little about yourself. Once you're invited, install the Forest Network app, tap <strong>Sign
+    in to matrix.theforestnetwork.earth</strong>, and follow the steps.
+  </p>
+
+  <h2>Finding Settings</h2>
+  <p>
+    Most of what's below starts in Settings: in the Chats tab, tap your picture at the top left.
+  </p>
+
+  <h2>Forgotten password</h2>
+  <p>
+    Email us at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> from the address linked to
+    your account, and we'll help you back in.
+  </p>
+
+  <h2>Keeping your private messages</h2>
+  <p>
+    Direct messages and private channels are end-to-end encrypted, so only you and the people in
+    the conversation can read them. To read them on a new phone, or after reinstalling the app,
+    you need your recovery key:
+  </p>
+  <ul>
+    <li>Go to Settings → <strong>Encryption</strong> → <strong>Get recovery key</strong>.</li>
+    <li>Store the key somewhere safe outside the app, such as a password manager.</li>
+  </ul>
+  <p>
+    If you lose all your devices without a recovery key, your encrypted messages can't be
+    restored, including by us. Public channels aren't affected: their full history is always
+    there.
+  </p>
+
+  <h2>Notifications</h2>
+  <p>If notifications aren't arriving:</p>
+  <ul>
+    <li>Check Settings → <strong>Notifications</strong> in the app.</li>
+    <li>On iPhone, check the iOS Settings app → Notifications → Forest Network, and that Focus modes aren't silencing it.</li>
+    <li>If they're still missing, send us a report using <strong>Report a problem</strong> (below).</li>
+  </ul>
+
+  <h2>Something isn't working</h2>
+  <p>
+    Go to Settings → <strong>Report a problem</strong>, describe what happened, and leave <strong>Allow
+    logs</strong> on so we can see what went wrong. You can also attach a
+    screenshot. If you can't sign in, tap the version number on the sign-in screen seven times
+    to open the same form.
+  </p>
+
+  <h2>Reporting a message or blocking someone</h2>
+  <ul>
+    <li><strong>Report a message:</strong> press and hold the message, then tap <strong>Report</strong>. Say what the problem is in your report, especially in direct messages and private channels, which our moderators can't read.</li>
+    <li><strong>Block someone:</strong> open their profile and tap <strong>Block user</strong>. You'll no longer see their messages or invitations. You can undo this in Settings → <strong>Blocked users</strong>.</li>
+    <li><strong>Leave a room:</strong> open the room's details and tap <strong>Leave room</strong>.</li>
+  </ul>
+  <p>
+    Our moderators review every report. Our <a href="/village/terms">Terms of Service</a> set out
+    what isn't allowed in the Village.
+  </p>
+
+  <h2>Deleting your account</h2>
+  <p>
+    Go to Settings → <strong>Manage account &amp; devices</strong>. This opens your account page,
+    where you can delete your account. Our <a href="/village/privacy">Privacy Policy</a> explains what
+    deletion removes.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    For anything else, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. We're a small
+    volunteer team, so please give us a little time to reply.
+  </p>
+</LegalLayout>
