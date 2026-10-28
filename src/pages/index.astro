@@ -2,9 +2,13 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 
-<SiteLayout title="Coming Soon" logoSize="large">
+<SiteLayout title="Welcome" logoSize="large">
   <div class="intro">
-    <h1>Coming Soon</h1>
+    <p class="blurb">
+      The Forest Network is a place where you can connect across the galaxies; a place to seek
+      solace, and to deepen into the Mystery&hellip; with others.
+      <a href="/about">Learn more about us</a>.
+    </p>
     <a class="join" href="/village/join">Join the Village</a>
   </div>
 </SiteLayout>
@@ -18,11 +22,11 @@ import SiteLayout from '../layouts/SiteLayout.astro';
     text-align: center;
   }
 
-  h1 {
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+  .blurb {
+    max-width: 44rem;
+    font-size: clamp(1.6rem, 3.6vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.45;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
   }
 
