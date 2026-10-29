@@ -1,0 +1,86 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const TRAILHEAD_EMAIL = 'trailhead@theforestnetwork.earth';
+---
+
+<SiteLayout title="About">
+  <article class="site-panel prose">
+    <h1>About The Forest Network</h1>
+    <p>
+      The Earth has been calling her human children to remember how to be in relation to all
+      things; to be in deep relation to ourselves, other human beings, and the more-than-human
+      beings we share this corner of the galaxy with.
+    </p>
+    <p>
+      The idea for The Forest Network came through the Muse as part of a soul revelation: two throbbing, fiery galaxies across
+      the tapestry of space and myself between them and all the stars. Tapping into that primal energy, 
+      being part of it. Arms outstretched wide and it all flowing into and through me. In connecting it 
+      all I am connecting myself to <i>all of it</i>.
+    </p>
+
+    <h2>The Village</h2>
+    <p>
+      The Village is a private, invite-only messaging community for beings involved in nature & soul work, 
+      and it is the first incarnation (of possibly many) of The Forest Network. It is non-commercial, non-monetised, and free. 
+      It is based in Naarm, Australia, on the traditional lands of the Wurundjeri people, and is tended by 
+      Evan Roth, Daniel McLean, and others. The Village is designed not to be a replacement for in-person connection, 
+      but rather as a way to facilitate <i>more of it</i>.
+    </p>
+
+    <h2>Built to be private</h2>
+    <p>
+      The Village runs on the <a href="https://matrix.org/">Matrix protocol</a> on our own server in Australia, 
+      and with federation turned off so your data is not shared with any other server. Direct messages and private
+      channels are end-to-end encrypted. You access the Village through the Forest Network app,
+      available for iOS and Android, or the Element X web client. Although the apps are available on the Apple and
+      (soon) Google Play stores, you must first be invited to join the Village. This is to preserve the safety, focus, 
+      and vitality of the Village.
+    </p>
+
+    <h2>Values</h2>
+    <p>
+      We are not affiliated with any one organisation but are connected to many. We are passionate about open source 
+      software and believe in the fundamental right of users not to be manipulated and exploited by Big Tech. We 
+      believe we are being called to dream the dream of the entire earth alongside all beings on it. We believe there 
+      is a collective need for The Forest Network and for collective healing. 
+    </p>
+
+    <h2>Invitations</h2>
+    <p>
+      We are looking for people who are passionate about what The Forest Network is (and what it could be) to help us grow it. 
+      There is space on our Council for people who feel called to that, and we are also looking for people to test beta releases 
+      of the apps for iOS and Android. Is there some other way you feel called to help? Let us know!
+    </p>
+
+    <h2>Join us</h2>
+    <p>
+      If this calls to your heart, <a href="/village/join">find the trailhead</a> and tell us a
+      little about yourself. Questions are always welcome: write to{' '}
+      <a href={`mailto:${TRAILHEAD_EMAIL}`}>{TRAILHEAD_EMAIL}</a>, or visit{' '}
+      <a href="/village/support">Support</a>.
+    </p>
+  </article>
+</SiteLayout>
+
+<style>
+  .prose h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.75rem;
+  }
+
+  .prose h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .prose p {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+</style>
